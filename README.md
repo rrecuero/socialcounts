@@ -24,7 +24,7 @@ https://clients6.google.com/rpc?key=google_key (POST)
 
 ## Installation
 ```
-$ npm install socialcounts
+$ npm install socialcountstracker
 ```
 
 ## Usage

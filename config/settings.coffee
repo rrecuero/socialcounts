@@ -9,3 +9,4 @@ module.exports =
   linkedin: true
   googlePlus: true
   stumbleUpon: true
+  google_token: ''

@@ -47,9 +47,10 @@ options = {
   linkedin: true
   googlePlus: true
   stumbleUpon: true
+  google_token: ''  # TODO: Pass your google API Token
 }
 
-socialcounts.start({twitter: false}, function (cache) {
+socialcounts.start({twitter: false, googlePlus: false}, function (cache) {
   a.getSocialCounts('www.moz.com', function (err, results) {
     console.log(results);
   });

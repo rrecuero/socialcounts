@@ -44,7 +44,7 @@ module.exports = class SocialCounts
     unless /^http/.test(url) then url = 'http://' + url
     
     # filter out deactivated urls
-    apis = _.pairs ApiUrls.createUrls url, ""
+    apis = _.pairs ApiUrls.createUrls url, @options.google_token
     apis = _.filter apis, (element) => @options[element[0]]
     apis = _.map apis, (element) =>
       element.push(url)

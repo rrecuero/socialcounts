@@ -46,9 +46,9 @@ module.exports = class SocialCache
         console.error('saving social result failed!', err) if err
         cb? err, result
 
-  getSocialResult: (page, cb) ->
+  getSocialResult: (page, network, cb) ->
     if not @opts.mongoActive
       cb()
       return
     @collections(@opts.collectionName)
-      .find({page: page}).limit(@opts.limitResults).toArray cb
+      .find({page: page, network: network}).limit(@opts.limitResults).toArray cb

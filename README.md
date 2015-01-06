@@ -9,7 +9,7 @@ retrieved from the official buttons provided by the networks.
 
 Need to install mongodb if you want to have a cache layer for your data.
 
-[mongodb]: http://www.mongodb.org/downloads  "Install Mongo DB"
+[Mongodb](http://www.mongodb.org/downloads)
 
 ## Endpoints
 

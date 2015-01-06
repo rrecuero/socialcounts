@@ -16,11 +16,13 @@ module.exports = class SocialCounts
     @cache.connect callback
 
   makeSocialRequest = (socialApi, callback) ->
+    res = {}
     [network, apiData, pageUrl] = socialApi
-    @cache.getSocialResult pageUrl, (err, results) =>
+    @cache.getSocialResult pageUrl, network, (err, results) =>
       # cache hit
       if results?.length > 0
-        callback err, results
+        res[network] = _.pluck results, 'data'
+        callback err, res
       else
         # cache miss
         requestData = 
@@ -29,9 +31,8 @@ module.exports = class SocialCounts
           json: true
           body: apiData.body
         request requestData, (error,response, body) =>
-          res = {}
           if !error && response.statusCode == 200
-            res[network] = body
+            res[network] = [body]
             @cache.insertResult pageUrl, network, body, (err, result) ->
               console.log 'Data inserted', result
           callback error, res
@@ -51,5 +52,9 @@ module.exports = class SocialCounts
     async.concat apis, _.bind(makeSocialRequest, @), (err, results) ->
       if err?
         console.warn 'Some social APIs failed', err
-      callback err, results
+      cleanedResults = {}
+      _.each results, (element) ->
+         name = _.keys(element)[0]
+         cleanedResults[name] = _.flatten _.values element
+      callback err, cleanedResults
 

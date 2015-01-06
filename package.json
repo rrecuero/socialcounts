@@ -29,7 +29,9 @@
   "dependencies": {
     "coffee-script": "~1.8.0",
     "async": "~0.9.0",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "request": "^2.51.0",
+    "mongodb": "^1.4.27"
   },
   "devDependencies": {
     "mocha": "~2.0.1",

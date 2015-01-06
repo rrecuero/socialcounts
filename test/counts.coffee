@@ -7,6 +7,7 @@ describe 'SocialCounts', ->
   cresults = {}
   counts = new SocialCounts()
   before (done) ->
+    this.timeout(5000)
     counts.start {}, (cache) ->
       counts.getSocialCounts 'www.moz.com', (err, res) ->
         results = res
@@ -24,7 +25,6 @@ describe 'SocialCounts', ->
     it 'facebook endpoint works and format is correct', ->
       expect(results.facebook).to.not.be.empty
       expect(results.facebook[0]).to.include.keys [
-        'id'
         'shares'
       ]
 
@@ -51,7 +51,7 @@ describe 'SocialCounts', ->
     it 'googleplus endpoint works and format is correct', ->
       expect(results.googlePlus).to.not.be.empty
       expect(results.googlePlus[0]).to.include.keys [
-        'id'
+        'result'
       ]
 
   describe 'linkedin', ->

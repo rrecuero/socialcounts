@@ -1,5 +1,5 @@
 module.exports =
-  createUrls: (page, GOOGLE_TOKEN) ->
+  createUrls: (page, google_token) ->
     GOOGLE_PLUS_BODY = 
       method: "pos.plusones.get"
       id: "p"
@@ -24,5 +24,5 @@ module.exports =
       stumbleUpon: 
         page: "http://www.stumbleupon.com/services/1.01/badge.getinfo?url=#{page}"
       googlePlus:  
-        page: "https://clients6.google.com/rpc?key=#{GOOGLE_TOKEN}", body: GOOGLE_PLUS_BODY
+        page: "https://clients6.google.com/rpc?key=#{google_token}", body: GOOGLE_PLUS_BODY
     settings

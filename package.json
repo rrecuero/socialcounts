@@ -1,5 +1,5 @@
 {
-  "name": "socialcounts",
+  "name": "socialcountstracker",
   "version": "0.0.1",
   "description": "Discover how many times was the URL shared in social media",
   "main": "index.js",

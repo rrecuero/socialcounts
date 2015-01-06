@@ -19,7 +19,7 @@ http://urls.api.twitter.com/1/urls/count.json?url=%%URL%%&callback=twttr.receive
 http://www.linkedin.com/cws/share-count?url=%%URL%%
 http://www.stumbleupon.com/services/1.01/badge.getinfo?url=%%URL%%
 http://widgets.pinterest.com/v1/urls/count.json?source=6&url=%%URL%%
-https://clients6.google.com/rpc?key=AIzaSyCKSbrvQasunBoV16zDH9R33D88CeLr9gQ (POST)
+https://clients6.google.com/rpc?key=google_key (POST)
 ```
 
 ## Installation

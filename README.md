@@ -37,23 +37,19 @@ var socialcounts = require('socialcounts');
 # Following are the defaults
 
 options = {
-  mongodb: {
-    active: true
-    host: 'mongodb://localhost/socialcounts'
-    limitResults: 100
-    collectionName: 'social'
-  },
-  activeNetworks: {
-    facebook: true
-    twitter: true
-    pinterest: true
-    linkedin: true
-    googlePlus: true
-    stumbleUpon: true
-  }
+  mongoActive: true
+  host: 'mongodb://localhost/socialcounts'
+  limitResults: 100
+  collectionName: 'social'
+  facebook: true
+  twitter: true
+  pinterest: true
+  linkedin: true
+  googlePlus: true
+  stumbleUpon: true
 }
 
-socialcounts.start({twitter: false}, function (cache) {
+socialcounts.start({activeNetworks: {twitter: false}}, function (cache) {
   a.getSocialCounts('www.moz.com', function (err, results) {
     console.log(results);
   });

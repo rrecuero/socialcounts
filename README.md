@@ -49,14 +49,16 @@ options = {
   stumbleUpon: true
 }
 
-socialcounts.start({activeNetworks: {twitter: false}}, function (cache) {
+socialcounts.start({twitter: false}, function (cache) {
   a.getSocialCounts('www.moz.com', function (err, results) {
     console.log(results);
   });
 });
+```
 
 
 ### Testing
+
 ```
 $ npm run test
 ```

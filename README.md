@@ -51,7 +51,15 @@ options = {
 }
 
 socialcounts.start({twitter: false, googlePlus: false}, function (cache) {
-  a.getSocialCounts('www.moz.com', function (err, results) {
+  socialcounts.getSocialCounts('www.ign.com', function (err, results) {
+    console.log(results);
+  });
+
+  socialcounts.getSocialCounts('www.as.com', function (err, results) {
+    console.log(results);
+  });
+
+  socialcounts.getSocialCounts('www.nytimes.com', function (err, results) {
     console.log(results);
   });
 });

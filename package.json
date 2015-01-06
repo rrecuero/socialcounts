@@ -1,0 +1,40 @@
+{
+  "name": "socialcounts",
+  "version": "0.0.1",
+  "description": "Discover how many times was the URL shared in social media",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers coffee:coffee-script/register",
+    "autotest": "mocha --compilers coffee:coffee-script/register -w"
+  },
+  "keywords": [
+    "social",
+    "shares",
+    "count",
+    "facebook",
+    "twitter",
+    "google+",
+    "pinterest"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rrecuero/socialcounts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rrecuero/socialcounts/issues"
+  },
+  "homepage": "https://github.com/rrecuero/socialcounts",
+  "author": "Ramon Recuero",
+  "license": "MIT",
+  "dependencies": {
+    "coffee-script": "~1.8.0",
+    "async": "~0.9.0",
+    "underscore": "~1.7.0"
+  },
+  "devDependencies": {
+    "mocha": "~2.0.1",
+    "chai": "~1.9.2",
+    "coffee-trace": "~1.4.0"
+  },
+  "readmeFilename": "README.md"
+}

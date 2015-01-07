@@ -40,6 +40,8 @@ options = {
   mongoActive: true
   host: 'mongodb://localhost/socialcounts'
   limitResults: 100
+  # How long it uses the prev result, without inserting a new one
+  cache_refresh: 24 * 3600
   collectionName: 'social'
   facebook: true
   twitter: true

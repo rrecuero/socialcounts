@@ -31,7 +31,7 @@ module.exports = class SocialCache
     @dbcollections[name] ?= @db.collection name
 
   applyIndexes: ->
-    @collections(@opts.collectionName).ensureIndex {network: 1, date: 1}, ->
+    @collections(@opts.collectionName).ensureIndex {network: 1, date: -1}, ->
 
   insertResult: (page, network, data, cb) ->
     if not @opts.mongoActive

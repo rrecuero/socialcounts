@@ -21,21 +21,23 @@ module.exports = class SocialCounts
     @cache.getSocialResult pageUrl, network, (err, results) =>
       # cache hit
       if results?.length > 0
-        res[network] = _.pluck results, 'data'
-        callback err, res
-      else
-        # cache miss
-        requestData = 
-          method: if apiData.body? then 'post' else 'get'
-          url: apiData.page
-          json: true
-          body: apiData.body
-        request requestData, (error,response, body) =>
-          if !error && response.statusCode == 200
-            res[network] = [body]
-            @cache.insertResult pageUrl, network, body, (err, result) ->
-              console.log 'Data inserted', result
-          callback error, res
+        now = new Date().getTime()
+        if (now - results[0].date.getTime())/ 1000 < @options.cache_refresh
+          res[network] = _.pluck results, 'data'
+          callback err, res
+          return
+      # cache miss
+      requestData =
+        method: if apiData.body? then 'post' else 'get'
+        url: apiData.page
+        json: true
+        body: apiData.body
+      request requestData, (error,response, body) =>
+        if !error && response.statusCode == 200
+          res[network] = [body]
+          @cache.insertResult pageUrl, network, body, (err, result) ->
+            console.log 'Data inserted', result
+        callback error, res
 
   getSocialCounts: (url, callback) ->
 

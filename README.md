@@ -31,26 +31,26 @@ $ npm install socialcountstracker
 
 ### API
 ```
-var socialcounts = require('socialcounts');
+var socialcounts = require('socialcountstracker');
 
-# Options that you can pass
-# Following are the defaults
+// Options that you can pass
+// Following are the defaults
 
-options = {
-  mongoActive: true
-  host: 'mongodb://localhost/socialcounts'
-  limitResults: 100
-  # How long it uses the prev result, without inserting a new one
-  cache_refresh: 24 * 3600
-  collectionName: 'social'
-  facebook: true
-  twitter: true
-  pinterest: true
-  linkedin: true
-  googlePlus: true
-  stumbleUpon: true
-  google_token: ''  # TODO: Pass your google API Token
-}
+var options = {
+  mongoActive: true,
+  host: 'mongodb://localhost/socialcounts',
+  limitResults: 100,
+  // How long it uses the prev result, without inserting a new one
+  cache_refresh: 24 * 3600,
+  collectionName: 'social',
+  facebook: true,
+  twitter: true,
+  pinterest: true,
+  linkedin: true,
+  googlePlus: true,
+  stumbleUpon: true,
+  google_token: ''  // TODO: Pass your google API Token
+};
 
 socialcounts.start({twitter: false, googlePlus: false}, function (cache) {
   socialcounts.getSocialCounts('www.ign.com', function (err, results) {

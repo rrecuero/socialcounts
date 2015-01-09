@@ -13,7 +13,8 @@ module.exports = class SocialCounts
       @options = {}
     @options = _.extend config, options
     @cache = new SocialCache @options
-    @cache.connect callback
+    @cache.connect =>
+      callback @
 
   makeSocialRequest = (socialApi, callback) ->
     res = {}
@@ -36,7 +37,7 @@ module.exports = class SocialCounts
         if !error && response.statusCode == 200
           res[network] = [body]
           @cache.insertResult pageUrl, network, body, (err, result) ->
-            console.log 'Data inserted', result
+          if result? then console.log 'Data inserted', result
         callback error, res
 
   getSocialCounts: (url, callback) ->

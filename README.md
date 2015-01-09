@@ -52,16 +52,16 @@ var options = {
   google_token: ''  // TODO: Pass your google API Token
 };
 
-socialcounts.start({twitter: false, googlePlus: false}, function (cache) {
-  socialcounts.getSocialCounts('www.ign.com', function (err, results) {
+socialcounts.start({twitter: false, googlePlus: false}, function (instance) {
+  instance.getSocialCounts('www.ign.com', function (err, results) {
     console.log(results);
   });
 
-  socialcounts.getSocialCounts('www.as.com', function (err, results) {
+  instance.getSocialCounts('www.as.com', function (err, results) {
     console.log(results);
   });
 
-  socialcounts.getSocialCounts('www.nytimes.com', function (err, results) {
+  instance.getSocialCounts('www.nytimes.com', function (err, results) {
     console.log(results);
   });
 });

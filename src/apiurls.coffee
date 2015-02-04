@@ -16,7 +16,7 @@ module.exports =
       twitter:     
         page: "http://cdn.api.twitter.com/1/urls/count.json?url=#{page}"
       facebook:    
-        page: "http://graph.facebook.com/?id=#{page}"
+        page: "https://api.facebook.com/method/links.getStats?urls=#{page}&format=json"
       pinterest:   
         page: "http://widgets.pinterest.com/v1/urls/count.json?source=6&url=#{page}"
       linkedin:    
